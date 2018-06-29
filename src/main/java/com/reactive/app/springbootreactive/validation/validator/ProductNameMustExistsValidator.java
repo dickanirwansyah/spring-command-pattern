@@ -18,7 +18,7 @@ public class ProductNameMustExistsValidator implements ConstraintValidator<Produ
     public boolean isValid(String value, ConstraintValidatorContext context) {
 
         if (value == null || value.isEmpty()){
-            return false;
+            return true;
         }
 
         return true;

@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 public class CreateNewProductRequest implements ServiceRequest{
 
-    //@ProductNameMustExists
+    @ProductNameMustExists
     @NotBlank
     private String productName;
 
@@ -23,7 +23,7 @@ public class CreateNewProductRequest implements ServiceRequest{
     @NotNull
     private Integer productStock;
 
-    //@ProductPriceMustExists
+    @ProductPriceMustExists
     @NotNull
     @Min(1000)
     private Integer productPrice;

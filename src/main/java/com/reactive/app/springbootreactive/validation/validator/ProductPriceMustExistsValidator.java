@@ -16,8 +16,8 @@ public class ProductPriceMustExistsValidator implements ConstraintValidator<Prod
     @Override
     public boolean isValid(Integer value, ConstraintValidatorContext context) {
 
-        if (value == 0 || value < 0){
-            return false;
+        if (value == null || value > 0){
+            return true;
         }
 
         return true;
