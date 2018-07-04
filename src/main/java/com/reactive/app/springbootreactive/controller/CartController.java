@@ -9,13 +9,12 @@ import com.reactive.app.springbootreactive.service.ServiceExecutor;
 import com.reactive.app.springbootreactive.service.command.CreateNewCartCommand;
 import com.reactive.app.springbootreactive.service.command.GetCartDetailCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
-
-import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/carts")
@@ -24,10 +23,8 @@ public class CartController {
     @Autowired
     private ServiceExecutor serviceExecutor;
 
-
     @PostMapping(value = "/{cartId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response<Cart>> create(@PathVariable("cartId") String cartId){
-
         CreateNewCartRequest request = CreateNewCartRequest
                 .builder()
                 .cartId(cartId)

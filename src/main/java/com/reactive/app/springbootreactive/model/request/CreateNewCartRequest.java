@@ -9,5 +9,6 @@ import lombok.Data;
 @Builder
 public class CreateNewCartRequest implements ServiceRequest{
 
+    @CartIdMustNotExists
     private String cartId;
 }

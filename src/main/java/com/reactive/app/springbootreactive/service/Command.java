@@ -6,4 +6,5 @@ import reactor.core.publisher.Mono;
 public interface Command<RESULT, REQUEST extends ServiceRequest> {
 
     Mono<RESULT> execute(REQUEST request);
+
 }
