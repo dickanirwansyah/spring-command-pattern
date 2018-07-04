@@ -46,6 +46,10 @@ public class Response<T> {
         return Response.status(HttpStatus.OK, data);
     }
 
+    public static <T> Response<T> NotFound(T data){
+        return Response.status(HttpStatus.NOT_FOUND, data);
+    }
+
     public static <T> Response<T> okOrNotFound(@Nullable T data){
         if (Objects.isNull(data)){
             return Response.status(HttpStatus.NOT_FOUND,null);
